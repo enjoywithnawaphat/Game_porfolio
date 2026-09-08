@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 4c8fd7f09ce425343b6470a5ee4a2942
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - flashlight: {fileID: 21300000, guid: bfcb1231ee4c24741b2815b6e9aa9210, type: 3}
+  - key: {fileID: 21300000, guid: 93bc91c3c5466e64890ce201dd058a33, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
