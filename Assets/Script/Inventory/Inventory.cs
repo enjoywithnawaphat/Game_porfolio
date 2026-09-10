@@ -12,10 +12,7 @@ public class Inventory
     public Inventory()
     {
         itemList = new List<Item>();
-        Debug.Log("Inventory");
 
-        //AddItem(new Item { itemType = Item.ItemType.Key, amount = 1 });
-        Debug.Log(itemList.Count);
     }
 
     public void AddItem(Item item)
@@ -39,6 +36,31 @@ public class Inventory
         else
         {
             itemList.Add(item);
+        }
+        OnItemListChanged.Invoke(this, EventArgs.Empty);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        if (item.IsStackable())
+        {
+            Item itemInInventory = null;
+            foreach (Item inventoryItem in itemList)
+            {
+                if (inventoryItem.itemType == item.itemType)
+                {
+                    inventoryItem.amount -= item.amount;
+                    itemInInventory = inventoryItem;
+                }
+            }
+            if (itemInInventory != null && itemInInventory.amount <= 0)
+            {
+                itemList.Remove(itemInInventory);
+            }
+        }
+        else
+        {
+            itemList.Remove(item);
         }
         OnItemListChanged.Invoke(this, EventArgs.Empty);
     }

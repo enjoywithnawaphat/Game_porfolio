@@ -154,6 +154,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""4baacfbd-1562-4f0a-b1b3-453586682a19"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -277,6 +286,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""570c3e6c-9afc-4403-85a5-d83dbead239a"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -320,6 +340,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_onFoot_Look = m_onFoot.FindAction("Look", throwIfNotFound: true);
         m_onFoot_SwitchCam = m_onFoot.FindAction("SwitchCam", throwIfNotFound: true);
         m_onFoot_Interact = m_onFoot.FindAction("Interact", throwIfNotFound: true);
+        m_onFoot_Drop = m_onFoot.FindAction("Drop", throwIfNotFound: true);
         // dialogue
         m_dialogue = asset.FindActionMap("dialogue", throwIfNotFound: true);
         m_dialogue_Next = m_dialogue.FindAction("Next", throwIfNotFound: true);
@@ -411,6 +432,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_onFoot_Look;
     private readonly InputAction m_onFoot_SwitchCam;
     private readonly InputAction m_onFoot_Interact;
+    private readonly InputAction m_onFoot_Drop;
     /// <summary>
     /// Provides access to input actions defined in input action map "onFoot".
     /// </summary>
@@ -450,6 +472,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "onFoot/Interact".
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_onFoot_Interact;
+        /// <summary>
+        /// Provides access to the underlying input action "onFoot/Drop".
+        /// </summary>
+        public InputAction @Drop => m_Wrapper.m_onFoot_Drop;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -497,6 +523,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Drop.started += instance.OnDrop;
+            @Drop.performed += instance.OnDrop;
+            @Drop.canceled += instance.OnDrop;
         }
 
         /// <summary>
@@ -529,6 +558,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Drop.started -= instance.OnDrop;
+            @Drop.performed -= instance.OnDrop;
+            @Drop.canceled -= instance.OnDrop;
         }
 
         /// <summary>
@@ -714,6 +746,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Drop" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDrop(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "dialogue" which allows adding and removing callbacks.

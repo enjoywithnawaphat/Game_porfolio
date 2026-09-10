@@ -15,6 +15,11 @@ public class ItemWorld : MonoBehaviour
         return itemworld;
     }
 
+    //public static ItemWorld DropItem(Item item)
+    //{
+
+    //}
+
     private Item item;
 
     public void SetItem(Item item)
