@@ -150,7 +150,7 @@ git clone https://github.com/enjoywithnawaphat/Game_porfolio.git
 
 ## 👨‍💻 เกี่ยวกับผม
 
-ผมเป็นนักศึกษาสาขา **วิทยาการคอมพิวเตอร์** มหาวิทยาลัยศรีปทุม และมีความสนใจด้าน **Game Development, Software Development และ AI**
+ผมเป็นนักศึกษาสาขา **วิทยาการคอมพิวเตอร์และนวัตกรรมการพัฒนาซอฟต์แวร์** มหาวิทยาลัยศรีปทุม และมีความสนใจด้าน **Game Development, Software Development และ AI**
 
 แม้ว่า Game Development จะเป็นสายที่ผมเพิ่งเริ่มศึกษา แต่ผมกำลังเรียนรู้ Unity และ C# อย่างต่อเนื่องผ่านการพัฒนาโปรเจกต์จริง พร้อมนำพื้นฐานด้าน Computer Science และ Programming มาประยุกต์ใช้ในการทำความเข้าใจระบบต่าง ๆ ของเกม
 
@@ -158,9 +158,8 @@ git clone https://github.com/enjoywithnawaphat/Game_porfolio.git
 
 - **Game Programmer**
 - **Unity Developer**
-- **Gameplay Programmer**
-- **Software Developer**
-
+- **Full Stack Developer**
+- **Backend Developer**
 ---
 
 ## 🔗 Links
